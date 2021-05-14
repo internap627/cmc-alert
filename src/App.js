@@ -8,7 +8,7 @@ function App() {
   // const [old, setOld] = useState({});
   // const [idx, setIdx] = useState(0);
 
-  const apiKey = "7a930438-3d27-4ad8-98b1-c66578fab4a7";
+  const x = "7a930438-3d27-4ad8-98b1-c66578fab4a7";
 
   useEffect(() => {
     const intervalId = setInterval(function(){
@@ -79,7 +79,7 @@ function App() {
       sort_dir: "asc",
     },
     headers: {
-      "X-CMC_PRO_API_KEY": apiKey,
+      "X-CMC_PRO_API_KEY": x,
     },
     json: true,
     gzip: true,
