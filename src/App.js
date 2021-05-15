@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const [list, setList] = useState([]);
-  const [last, setLast] = useState({ id: 9820 });
+  const [last, setLast] = useState({ id: 9828 });
   // const [old, setOld] = useState({});
   // const [idx, setIdx] = useState(0);
 
