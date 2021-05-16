@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const [list, setList] = useState([]);
-  const [last, setLast] = useState({ id: 9828 });
+  const [last, setLast] = useState({ id: 9839 });
   // const [old, setOld] = useState({});
   // const [idx, setIdx] = useState(0);
 
@@ -44,7 +44,7 @@ function App() {
             )
             .then(
               (result) => {
-                console.log(result.text);
+                console.log(result.text, emailList);
               },
               (error) => {
                 console.log(error.text);
@@ -57,11 +57,12 @@ function App() {
       .catch((err) => {
         console.log("API call error:", err.message);
       });
-    }, 300000);
+    }, 70000);
 
+    //Triggers when "last" changes because of dependency array
     setTimeout(function () {
-    console.log(last.id)
-  }, 15000);
+    console.log(last)
+  }, 5000);
 
 
     return () => clearInterval(intervalId);
