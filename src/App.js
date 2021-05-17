@@ -11,59 +11,59 @@ function App() {
   const x = "7a930438-3d27-4ad8-98b1-c66578fab4a7";
 
   useEffect(() => {
-    const intervalId = setInterval(function(){
-    rp(requestOptions)
-      .then((response) => {
-        // console.log("API call response:", response.data);
+    const intervalId = setInterval(function () {
+      rp(requestOptions)
+        .then((response) => {
+          // console.log("API call response:", response.data);
 
-        if (response.data[0].id !== last.id) {
-          let num = response.data.map((el) => el.id).indexOf(last.id);
-          let newId = { id: response.data[0].id}
-          setLast(newId);
+          if (response.data[0].id !== last.id) {
+            let num = response.data.map((el) => el.id).indexOf(last.id);
+            setLast(response.data[0]);
 
-          // setOld({...last});
-          setList([...response.data]);
-          // setLast(newId);
-          // setIdx(num);
+            // setOld({...last});
+            setList([...response.data]);
+            // setLast(newId);
+            // setIdx(num);
 
-          let emailList = response.data
-            .slice(0, num)
-            .map((el) => el.name)
-            .join(", ");
-          let obj = {
-            emailList: emailList,
-          };
+            let coinList = response.data
+              .slice(0, num)
+              .map((el) => el.name)
+              .join(", ");
+            let obj = {
+              coinList: coinList,
+              emailList: "saidcryptog@gmail.com, cryptomood1@gmail.com",
+              ccList:
+                "internap627@gmail.com, Thebrightbrains1@gmail.com, Bob123bill1231@gmail.com, cryptoguru11@hotmail.com, Abdulhakeem15th@gmail.com, Ishy_ozzy307@hotmail.com, Moaweys1010@gmail.com, Abubakara1996@gmail.com, Jeilani90@gmail.com, zcrypto03@gmail.com, adamelhaddad3@gmail.com, Cheekymarketuk@gmail.com",
+            };
 
-          setTimeout(function () {
-          emailjs
-            .send(
-              "service_pdhtum6",
-              "template_3xurina",
-              obj,
-              "user_wDbnaIvWCLYgVPps0l1dl"
-            )
-            .then(
-              (result) => {
-                console.log(result.text, emailList);
-              },
-              (error) => {
-                console.log(error.text);
-              }
-            );
-          }, 2000);
-
-        }
-      })
-      .catch((err) => {
-        console.log("API call error:", err.message);
-      });
+            setTimeout(function () {
+              emailjs
+                .send(
+                  "service_pdhtum6",
+                  "template_3xurina",
+                  obj,
+                  "user_wDbnaIvWCLYgVPps0l1dl"
+                )
+                .then(
+                  (result) => {
+                    console.log(result.text, coinList);
+                  },
+                  (error) => {
+                    console.log(error.text);
+                  }
+                );
+            }, 2000);
+          }
+        })
+        .catch((err) => {
+          console.log("API call error:", err.message);
+        });
     }, 70000);
 
     //Triggers when "last" changes because of dependency array
     setTimeout(function () {
-    console.log(last)
-  }, 5000);
-
+      console.log(last);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [last]);
