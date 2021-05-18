@@ -4,9 +4,7 @@ import "./App.css";
 
 function App() {
   const [list, setList] = useState([]);
-  const [last, setLast] = useState({ id: 9849 });
-  // const [old, setOld] = useState({});
-  // const [idx, setIdx] = useState(0);
+  const [last, setLast] = useState({ id: 9903 });
 
   const x = "7a930438-3d27-4ad8-98b1-c66578fab4a7";
 
@@ -20,14 +18,15 @@ function App() {
             let num = response.data.map((el) => el.id).indexOf(last.id);
             setLast(response.data[0]);
 
-            // setOld({...last});
             setList([...response.data]);
-            // setLast(newId);
-            // setIdx(num);
 
             let coinList = response.data
               .slice(0, num)
-              .map((el) => el.name)
+              .map((el) => {
+                let platform = el.platform && el.platform.symbol
+                let address = el.platform && el.platform.token_address
+                return `Name : ${el.name} || Network : ${platform} || Contract : ${address}`
+              })
               .join(", ");
             let obj = {
               coinList: coinList,
