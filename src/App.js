@@ -32,7 +32,7 @@ function App() {
               coinList: coinList,
               emailList: "saidcryptog@gmail.com, cryptomood1@gmail.com",
               ccList:
-                "internap627@gmail.com, Thebrightbrains1@gmail.com, Bob123bill1231@gmail.com, cryptoguru11@hotmail.com, Abdulhakeem15th@gmail.com, Ishy_ozzy307@hotmail.com, Moaweys1010@gmail.com, Abubakara1996@gmail.com, Jeilani90@gmail.com, zcrypto03@gmail.com, adamelhaddad3@gmail.com, Cheekymarketuk@gmail.com, hillflos00@gmail.com",
+                "internap627@gmail.com, Thebrightbrains1@gmail.com, Bob123bill1231@gmail.com, cryptoguru11@hotmail.com, Abdulhakeem15th@gmail.com, ishy_ozzy307@hotmail.com, Moaweys1010@gmail.com, Abubakara1996@gmail.com, Jeilani90@gmail.com, zcrypto03@gmail.com, adamelhaddad3@gmail.com, Cheekymarketuk@gmail.com, hillflos00@gmail.com, moonshooters1988@gmail.com",
             };
 
             setTimeout(function () {
